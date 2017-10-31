@@ -1,0 +1,14 @@
+<h1><%= link_to @post.title, post_url(@post) %> by <%= @post.author_username %></h1>
+
+<p>Content: </p>
+<br>
+<p> <%= @post.content %> </p>
+
+<h4>Subs</h4>
+<ul>
+  <li><%= link_to @post.sub.title, sub_url(@post.sub) %></li>
+</ul>
+
+<% if @post.author == current_user %>
+  <%= link_to "Edit", edit_post_url(@post) %>
+<% end %>
